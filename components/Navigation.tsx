@@ -40,27 +40,19 @@ export function Navigation() {
                     : 'bg-transparent'
             )}
         >
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3'>
                 <div className='flex justify-between items-center h-16'>
                     {/* Logo */}
                     <Link
                         href='/'
                         className='flex items-center space-x-2 group'
                     >
-                        {' '}
-                        {/* <Image
-                            src={'/LookOutMode_logo.jpg'}
-                            alt='LookOut Mode Logo'
-                            fill
-                            className='object-cover'
-                            priority
-                        /> */}
                         {/* <Sparkles className='w-6 h-6 text-gray-800 group-hover:text-gray-600 transition-colors' /> */}
                         <span className='font-playfair text-xl font-bold text-gray-800 group-hover:text-gray-600 transition-colors'>
                             <Image
-                                src='/LookOutMode_logo.jpg'
+                                src='/LookOutMode_logo.png'
                                 alt='LookOut Mode Logo'
-                                width={200}
+                                width={250}
                                 height={90}
                                 className='object-cover'
                                 priority

@@ -56,7 +56,7 @@ export function HeroSlideshow() {
     };
 
     return (
-        <div className='relative w-full h-[60vh] md:h-[70vh] lg:h-[80vh] overflow-hidden'>
+        <div className='relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-[75vh] 2xl:h-[85vh] 3xl:h-[95vh] overflow-hidden'>
             {slides.map((slide, index) => (
                 <div
                     key={slide.id}

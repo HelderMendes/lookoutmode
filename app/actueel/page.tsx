@@ -45,17 +45,6 @@ const clothingBrandImages = clothingBrands.map(
         }.jpg`
 );
 
-// const brandImages = clothingBrands.map(
-//     (_, index) => _ // This is a placeholder function to generate image paths;
-// );
-// const clothingBrandImages = () => {
-//     const index = Math.floor(Math.random() * clothingBrands.length);
-//     const baseUrl = `/images/LookOutMode_zomer-2025_kledingcollectie-in-Bussum-${
-//         index + 1
-//     }.jpg`;
-//     return `baseUrl`;
-// };
-
 export default function Actueel() {
     const { currentSeason } = useSeasonal();
     const { t } = useLanguage();
@@ -75,7 +64,7 @@ export default function Actueel() {
             </section>
 
             {/* Main Collection */}
-            <section className='py-20 bg-white'>
+            <section className='py-20 bg-white/0'>
                 <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
                     <div className='mb-16'>
                         <h2 className='font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center'>
@@ -131,10 +120,10 @@ export default function Actueel() {
                                             <div className='aspect-[4/3] relative overflow-hidden rounded-t-lg'>
                                                 <Image
                                                     src={`https://images.pexels.com/photos/${
-                                                        1926769 + index
+                                                        31374237 + index
                                                     }/pexels-photo-${
-                                                        1926769 + index
-                                                    }.jpeg?auto=compress&cs=tinysrgb&w=800`}
+                                                        31374237 + index
+                                                    }.jpeg`}
                                                     alt={brand}
                                                     fill
                                                     className='object-cover group-hover:scale-105 transition-transform duration-300'
@@ -213,9 +202,9 @@ export default function Actueel() {
                                             <div className='aspect-square relative overflow-hidden rounded-t-lg'>
                                                 <Image
                                                     src={`https://images.pexels.com/photos/${
-                                                        1447562 + index
+                                                        15711374 + index
                                                     }/pexels-photo-${
-                                                        1447562 + index
+                                                        15711374 + index
                                                     }.jpeg?auto=compress&cs=tinysrgb&w=800`}
                                                     alt={brand}
                                                     fill
@@ -284,7 +273,7 @@ export default function Actueel() {
             </section>
 
             {/* Collection Story */}
-            <section className='py-20 bg-gray-50'>
+            <section className='py-20 bg-gray-50/0'>
                 <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
                     <h2 className='font-playfair text-3xl md:text-4xl font-bold text-gray-900 mb-8'>
                         {t('current.story.title')}
