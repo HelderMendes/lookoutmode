@@ -34,13 +34,13 @@ export function Navigation() {
     return (
         <nav
             className={cn(
-                'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+                'fixed top-0 left-0 right-0 z-50 transition-all duration-300 ',
                 isScrolled
                     ? 'bg-white/95 backdrop-blur-md shadow-sm'
                     : 'bg-transparent'
             )}
         >
-            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3'>
+            <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 z-40'>
                 <div className='flex justify-between items-center h-16'>
                     {/* Logo */}
                     <Link
