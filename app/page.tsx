@@ -7,7 +7,10 @@ import { Card, CardContent } from '@/components/ui/card';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
 import { useSeasonal } from '@/contexts/SeasonalContext';
 import { useLanguage } from '@/contexts/LanguageContext';
-import Merken from '@/components/Merken';
+// import Merken from '@/components/Merken';
+
+import dynamic from 'next/dynamic';
+const Merken = dynamic(() => import('../components/Merken'), { ssr: false });
 
 export default function Home() {
     const { currentSeason } = useSeasonal();
@@ -15,8 +18,9 @@ export default function Home() {
 
     return (
         <div className='pt-16 z-50'>
-            <Merken />
+            {/* <Merken /> */}
             <HeroSlideshow />
+            <Merken />
             {/* Philosophy Section */}
             <section className={`seasonal-bg-${currentSeason} py-20`}>
                 <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>

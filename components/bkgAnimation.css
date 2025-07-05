@@ -10,7 +10,15 @@
     height: 110vh;
     top: 0;
     left: 0;
-    background: transparent;
+    /* background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg); */
+    /* background: rosybrown; */
+    background-color: #bc70a430;
+    background-image: conic-gradient(
+        140deg,
+        #eadedb 0%,
+        #bc70a4 50%,
+        #bfd641 75%
+    );
     overflow: hidden;
     -webkit-user-select: none; /* Safari, Chrome */
     -moz-user-select: none; /* Firefox */

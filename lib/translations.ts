@@ -108,8 +108,8 @@ const translations = {
         // Contact page
         'contact.title': 'Contact',
         'contact.subtitle':
-            'Bezoek onze boetiek in het hart van Bussum of neem contact met ons op. Wij helpen je graag bij het vinden van je perfecte stijl en horen graag van je.',
-        'contact.visit.title': 'Bezoek Onze Boetiek',
+            'Bezoek onze winkel in het hart van Bussum of neem contact met ons op. Wij helpen je graag bij het vinden van je perfecte stijl en horen graag van je.',
+        'contact.visit.title': 'Bezoek Onze Winkel',
         'contact.address': 'Adres',
         'contact.phone': 'Telefoon',
         'contact.email': 'E-mail',
@@ -134,7 +134,7 @@ const translations = {
 
         // Footer
         'footer.about':
-            'Boetiek modewinkel in Bussum, Nederland. Wij cureren authentieke trends en designermerken voor vrouwen die kwaliteit en uniciteit waarderen.',
+            'Modewinkel vor vrouwen in Bussum, Nederland. Wij cureren authentieke trends en designermerken voor vrouwen die kwaliteit en uniciteit waarderen.',
         'footer.contact': 'Contact',
         'footer.hours': 'Openingstijden',
         'footer.hours.schedule':
@@ -279,8 +279,8 @@ const translations = {
         // Contact page
         'contact.title': 'Contact Us',
         'contact.subtitle':
-            "Visit our boutique in the heart of Bussum or get in touch with us. We're here to help you find your perfect style and would love to hear from you.",
-        'contact.visit.title': 'Visit Our Boutique',
+            "Visit our store in the heart of Bussum or get in touch with us. We're here to help you find your perfect style and would love to hear from you.",
+        'contact.visit.title': 'Visit Our Store',
         'contact.address': 'Address',
         'contact.phone': 'Phone',
         'contact.email': 'Email',
@@ -305,7 +305,7 @@ const translations = {
 
         // Footer
         'footer.about':
-            'Boutique fashion store in Bussum, Netherlands. We curate authentic trends and designer brands for women who appreciate quality and uniqueness.',
+            "Women's clothing store in Bussum, Netherlands. We curate authentic trends and designer brands for women who appreciate quality and uniqueness.",
         'footer.contact': 'Contact',
         'footer.hours': 'Opening Hours',
         'footer.hours.schedule':

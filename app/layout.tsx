@@ -14,11 +14,11 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-    title: 'LookOut Mode - Boutique Fashion Store | Bussum, Netherlands',
+    title: "LookOut Mode - Women's clothing store | Bussum, Netherlands",
     description:
-        'Discover authentic trends and curated designer brands for women at LookOut Mode. Located in Bussum, Netherlands. Independent fashion boutique with seasonal collections.',
+        'Discover authentic trends and curated designer brands for women at LookOut Mode. Located in Bussum, Netherlands. Independent fashion shop with seasonal collections.',
     keywords:
-        'fashion, boutique, designer brands, women fashion, Bussum, Netherlands, seasonal collections',
+        'fashion, Cloths, designer brands, women fashion, Bussum, Netherlands, seasonal collections',
 };
 
 export default function RootLayout({
@@ -33,7 +33,9 @@ export default function RootLayout({
                 <LanguageProvider>
                     <SeasonalProvider>
                         <Navigation />
-                        <main className='pt-4 min-h-screen'>{children}</main>
+                        <main className='pt-4 min-h-screen overflow-hidden'>
+                            {children}
+                        </main>
                         <Footer />
                     </SeasonalProvider>
                 </LanguageProvider>

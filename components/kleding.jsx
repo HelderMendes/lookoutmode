@@ -69,9 +69,9 @@ export default function Merken() {
                 >
                     <div className={styles.marqueeText}>
                         {item.brands.map((brand, i) => (
-                            <li key={i} className={styles.brand}>
+                            <div key={i} className={styles.brand}>
                                 {brand}
-                            </li>
+                            </div>
                         ))}
                     </div>
                 </div>
