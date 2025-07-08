@@ -46,15 +46,15 @@ const brands = [
 const STRINGS = [
     {
         brands: [...shuffle(brands), ...shuffle(brands)],
-        speed: 80,
+        speed: 60,
     },
     {
         brands: [...shuffle(brands), ...shuffle(brands)],
-        speed: 108,
+        speed: 88,
     },
     {
         brands: [...shuffle(brands), ...shuffle(brands)],
-        speed: 64,
+        speed: 34,
     },
 ];
 
