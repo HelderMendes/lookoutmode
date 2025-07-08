@@ -7,9 +7,8 @@ import { Card, CardContent } from '@/components/ui/card';
 import { HeroSlideshow } from '@/components/HeroSlideshow';
 import { useSeasonal } from '@/contexts/SeasonalContext';
 import { useLanguage } from '@/contexts/LanguageContext';
-// import Merken from '@/components/Merken';
-
 import dynamic from 'next/dynamic';
+import InfiniteSlider from '@/components/InfiniteSlider';
 const Merken = dynamic(() => import('../components/Merken'), { ssr: false });
 
 export default function Home() {
@@ -18,7 +17,7 @@ export default function Home() {
 
     return (
         <div className='pt-16 z-50'>
-            {/* <Merken /> */}
+            <InfiniteSlider />
             <HeroSlideshow />
             <Merken />
             {/* Philosophy Section */}

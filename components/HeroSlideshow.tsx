@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Spinner } from '@/components/ui/spinner';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -21,31 +22,38 @@ const slideTitles = Array.from({ length: 8 }, (_, i) => ({
 
 function getFormattedImage(index: number): string {
     const numStr = index.toString().padStart(2, '0');
-    return `/images/LookOutMode_zomer-2025_kledingcollectie-in-Bussum–${numStr}.jpg`;
+    return `/images/zomercollectie_2025-${numStr}.jpg`;
 }
 
-// Generate 33 shuffled image indices (01–33)
-const shuffledImages = Array.from({ length: 33 }, (_, i) => i + 1)
-    .map((n) => ({ n, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ n }) => getFormattedImage(n));
-
-const slides: Slide[] = shuffledImages.map((image, index) => ({
-    id: index + 1,
-    image,
-    ...slideTitles[index % slideTitles.length],
-}));
 export function HeroSlideshow() {
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [slides, setSlides] = useState<Slide[]>([]);
     const { t } = useLanguage();
 
     useEffect(() => {
+        const shuffledImages = Array.from({ length: 22 }, (_, i) => i + 1)
+            .map((n) => ({ n, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ n }) => getFormattedImage(n));
+
+        const slidesData = shuffledImages.map((image, index) => ({
+            id: index + 1,
+            image,
+            ...slideTitles[index % slideTitles.length],
+        }));
+
+        setSlides(slidesData);
+    }, []);
+
+    useEffect(() => {
+        if (slides.length === 0) return;
+
         const timer = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % slides.length);
         }, 5000);
 
         return () => clearInterval(timer);
-    }, []);
+    }, [slides.length]);
 
     const nextSlide = () => {
         setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -55,8 +63,16 @@ export function HeroSlideshow() {
         setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
     };
 
+    if (slides.length === 0) {
+        return (
+            <div className='relative w-full aspect-[1700/1100] overflow-hidden flex items-center justify-center bg-gray-100'>
+                <Spinner size='lg' />
+            </div>
+        );
+    }
+
     return (
-        <div className='relative w-full h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-[75vh] 2xl:h-[85vh] 3xl:h-[95vh] overflow-hidden'>
+        <div className='relative w-full aspect-[1700/1100] overflow-hidden'>
             {slides.map((slide, index) => (
                 <div
                     key={slide.id}
@@ -76,8 +92,8 @@ export function HeroSlideshow() {
                         <div className='absolute inset-0 bg-black/30' />
 
                         {/* Content overlay */}
-                        <div className='absolute inset-0 flex items-center justify-center'>
-                            <div className='text-center text-white max-w-4xl px-4'>
+                        <div className='absolute inset-0 flex items-end justify-center'>
+                            <div className='text-center text-white max-w-4xl px-4 pb-24'>
                                 <h1 className='font-playfair text-4xl md:text-6xl lg:text-7xl font-bold mb-6'>
                                     {t(slide.titleKey)}
                                 </h1>
@@ -115,7 +131,7 @@ export function HeroSlideshow() {
             </Button>
 
             {/* Slide indicators */}
-            <div className='absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2'>
+            {/* <div className='absolute bottom-6 left-1/2 -translate-x-1/2 flex space-x-2'>
                 {slides.map((_, index) => (
                     <button
                         key={index}
@@ -126,7 +142,7 @@ export function HeroSlideshow() {
                         onClick={() => setCurrentSlide(index)}
                     />
                 ))}
-            </div>
+            </div> */}
         </div>
     );
 }

@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useSeasonal } from '@/contexts/SeasonalContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import GoogleMap from '@/components/GoogleMap';
+import LookoutModeMap from '@/components/LookoutModeMap';
 
 export default function Contact() {
     const { currentSeason } = useSeasonal();
@@ -255,17 +257,9 @@ export default function Contact() {
                     <h2 className='font-playfair text-3xl font-bold text-gray-900 mb-8 text-center'>
                         {t('contact.map.title')}
                     </h2>
-                    {/* <iframe
-                        src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2441.253060040717!2d5.1727086!3d52.275107600000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c6099447132047%3A0xcafffe4296d13eb1!2slook%20Out%20Mode!5e0!3m2!1sen!2snl!4v1750744124491!5m2!1sen!2snl'
-                        width='100%'
-                        height='450'
-                        // style='border:0;'
-                        // allowFullScreen='true'
-                        loading='lazy'
-                        // referrerpolicy='no-referrer-when-downgrade'
-                    ></iframe> */}
-                    {/* <GoogleMap />
                     <div className='rounded-lg overflow-hidden shadow-lg'>
+                        <GoogleMap />
+                        {/* <LookoutModeMap /> */}
                         <div className='w-full h-96 bg-gray-300 flex items-center justify-center'>
                             <div className='text-center'>
                                 <MapPin className='w-12 h-12 text-gray-600 mx-auto mb-4' />
@@ -277,7 +271,7 @@ export default function Contact() {
                                 </p>
                             </div>
                         </div>
-                    </div> */}
+                    </div>
                 </div>
             </section>
         </div>

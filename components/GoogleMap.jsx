@@ -1,5 +1,6 @@
 import React from 'react';
 import { GoogleMap, useLoadScript } from '@react-google-maps/api';
+import LookoutModeMap from './LookoutModeMap';
 
 const containerStyle = {
     width: '100%',
@@ -7,8 +8,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: 37.7749, // Example: San Francisco
-    lng: -122.4194,
+    lat: 52.2751109, // Example: Bussum
+    lng: 5.1701283,
 };
 
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
@@ -26,7 +27,7 @@ export default function GoogleMapLookOutMode() {
 
     return (
         <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={12}>
-            {/* Add map children/components here */}
+            <LookoutModeMap />
         </GoogleMap>
     );
 }
