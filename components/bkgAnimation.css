@@ -12,7 +12,7 @@
     left: 0;
     /* background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg); */
     /* background: rosybrown; */
-    background-color: #bc70a430;
+    background-color: #db089816;
     background-image: conic-gradient(
         140deg,
         #eadedb 0%,
@@ -51,32 +51,32 @@
 }
 
 .ball:nth-child(1) {
-    color: sandybrown;
+    color: rgb(96, 237, 244);
 }
 
 .ball:nth-child(2) {
-    color: yellowgreen;
+    color: rgb(160, 237, 7);
 }
 .ball:nth-child(3) {
-    color: teal;
+    color: rgb(20, 3, 149);
 }
 .ball:nth-child(4) {
-    color: papayawhip;
+    color: rgb(105, 121, 240);
 }
 .ball:nth-child(5) {
     color: olive;
 }
 .ball:nth-child(5) {
-    color: sienna;
+    color: rgb(160, 45, 135);
 }
 .ball:nth-child(7) {
     color: mediumaquamarine;
 }
 .ball:nth-child(8) {
-    color: orchid;
+    color: rgb(221, 8, 214);
 }
 .ball:nth-child(9) {
-    color: tomato;
+    color: rgb(111, 255, 71);
 }
 
 /* Using a custom attribute for variability */
