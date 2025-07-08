@@ -1,4 +1,5 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 
@@ -8,38 +9,47 @@ const allImages = Array.from({ length: 13 }, (_, i) => {
 });
 
 const shuffle = (array: string[]) => {
-    return array.sort(() => Math.random() - 0.5);
+    return [...array].sort(() => Math.random() - 0.5);
 };
 
 const InfiniteSlider = () => {
-    const [images, setImages] = useState(() => shuffle([...allImages]));
-    const [key, setKey] = useState(0); // to force animation restart
+    const [images, setImages] = useState<string[]>([]);
+    const [animationKey, setAnimationKey] = useState(0);
 
-    // Restart and reshuffle after animation ends
     useEffect(() => {
+        // Initial shuffle
+        setImages(shuffle(allImages));
+
+        // Timer to reshuffle and restart animation
         const interval = setInterval(() => {
-            setImages(shuffle([...allImages]));
-            setKey((prev) => prev + 1); // changing key restarts animation
-        }, 20000); // same as animation duration
+            setImages(shuffle(allImages)); // reshuffle
+            setAnimationKey((prev) => prev + 1); // restart animation by changing key
+        }, 20000); // match your animation duration (20s)
 
         return () => clearInterval(interval);
     }, []);
 
+    if (images.length === 0) return null;
+
     return (
-        <div className='relative w-full h-[120px] overflow-hidden'>
+        <div className='relative w-full h-[100px] overflow-hidden'>
             <div
-                key={key}
+                key={animationKey}
                 className='absolute top-0 left-0 flex gap-4 animate-slideLTR'
             >
                 {images.map((src, index) => (
-                    <Image
+                    <div
                         key={index}
-                        src={src}
-                        alt={`Slide ${index}`}
-                        width={70}
-                        height={100}
-                        className='object-contain mx-6'
-                    />
+                        className='relative w-[100px] h-[100px] mx-6'
+                    >
+                        <Image
+                            src={src}
+                            alt={`Slide ${index}`}
+                            fill
+                            className='object-contain'
+                            priority
+                        />
+                    </div>
                 ))}
             </div>
         </div>

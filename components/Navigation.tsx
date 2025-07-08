@@ -48,7 +48,7 @@ export function Navigation() {
                         className='flex items-center space-x-2 group'
                     >
                         {/* <Sparkles className='w-6 h-6 text-gray-800 group-hover:text-gray-600 transition-colors' /> */}
-                        <span className='font-playfair text-xl font-bold text-gray-800 group-hover:text-gray-600 transition-colors'>
+                        <span className='font-playfair text-xl font-bold text-gray-800 group-hover:text-gray-600 transition-colors relative'>
                             <Image
                                 src='/LookOutMode_logo.png'
                                 alt='LookOut Mode Logo'
